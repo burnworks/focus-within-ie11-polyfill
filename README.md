@@ -2,7 +2,7 @@
 
 :focus-within Pseudo-Class Polyfill for IE11
 
-IE11 で :focus-within 疑似クラスを使用するための JavaScript です。
+IE11 で `:focus-within` 疑似クラスを使用するための JavaScript です。
 
 ## 使い方
 
@@ -16,4 +16,4 @@ IE11 で :focus-within 疑似クラスを使用するための JavaScript です
 
 ## その他
 
-本当は IE11 など、:focus-within 疑似クラスに対応しない環境でのみ動作するようにした方がよいと思いますが、現時点でそういう処理は入れていません。改変はご自由にどうぞ。
+本当は IE11 など、`:focus-within` 疑似クラスに対応しない環境でのみ動作するようにした方がよいと思いますが、現時点でそういう処理は入れていません。改変はご自由にどうぞ。
