@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>focus-within-ie11-polyfill</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- focus-within-ie11-polyfill.js -->
+<script src="../src/focus-within-ie11-polyfill.js" defer></script>
+
+<style>
+html,body {
+    height: 100%;
+    background-color: #efefef;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: white;
+    position: relative;
+}
+header {
+    padding: 0 20px;
+    display: flex;
+}
+h1 {
+    font-size: 1rem;
+}
+.main-menu {
+margin-left: 30px;
+}
+.main-menu nav {
+    height: 100%;
+}
+.main-menu ul {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.main-menu li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu-list {
+    display: flex;
+}
+.menu-list > li {
+    height: 100%;
+}
+.menu-list > li > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+}
+.menu-list > li > ul {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    background-color: aliceblue;
+    display: flex;
+    flex-wrap: wrap;
+}
+.menu-list > li > ul a {
+    display: block;
+    padding: 10px 20px;
+}
+
+/* hover action */
+.menu-list > li > a:hover,
+.menu-list > li > a:focus,
+.menu-list > li:hover > a {
+    background-color: aliceblue;
+}
+.menu-list > li > a:hover + ul,
+.menu-list > li:hover a + ul {
+    left: 0;
+    width: 100%;
+    height: auto;
+    clip: auto;
+    padding: 20px;
+}
+
+/* for modern browser */
+@supports selector(li:focus-within) {
+    .menu-list > li:focus-within > ul {
+        left: 0;
+        width: 100%;
+        height: auto;
+        clip: auto;
+        padding: 20px;
+    }
+}
+
+/* for IE11 */
+.focus-is-active > a + ul {
+    left: 0;
+    width: 100%;
+    height: auto;
+    clip: auto;
+    padding: 20px;
+}
+</style>
+
+</head>
+<body>
+
+    <div class="header">
+        <header>
+            <div class="site-banner">
+                <h1>
+                    focus-within-ie11-polyfill
+                </h1>
+            </div>
+            <div class="main-menu">
+                <nav aria-label="メインメニュー">
+                    <ul class="menu-list">
+                        <li class="is-dropdown">
+                            <a href="#">MenuItem01</a>
+                            <ul>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>
+                            </ul>
+                        </li>
+                        <li class="is-dropdown">
+                            <a href="#">MenuItem02</a>
+                            <ul>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>
+                            </ul>
+                        </li>
+                        <li class="is-dropdown">
+                            <a href="#">MenuItem03</a>
+                            <ul>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>
+                                <li><a href="#">SumMenuItem</a></li>	
+                                <li><a href="#">SumMenuItem</a></li>	
+                                <li><a href="#">SumMenuItem</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    <div>
+        <main>
+
+        </main>
+    </div>
+
+</body>
+</html>
