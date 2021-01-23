@@ -1,7 +1,7 @@
 'use strict'
     ; (function () {
         //IE11だけ動作させる
-        if (document.documentMode && document.uniqueID) {
+        if (document.uniqueID && document.documentMode == 11) {
 
             // 対象要素と附与する class 名の設定
             const focusItemClass = '.is-dropdown';
