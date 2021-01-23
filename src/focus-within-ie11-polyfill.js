@@ -23,7 +23,7 @@
 
             // 対象要素からフォーカスが外れたら class を削除
             function focusoutListener(event) {
-                if (!document.activeElement.classList.contains('e')) {
+                if (!document.activeElement.classList.contains(focusItemClass.slice(1))) {
                     Array.prototype.forEach.call(focusItems, function (e) {
                         e.classList.remove(focusActiveClass);
                     });
