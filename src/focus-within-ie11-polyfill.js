@@ -16,12 +16,12 @@
                 e.addEventListener('focusout', focusoutListener);
             });
 
-            // 対象要素内にフォーカスがある場合に class を附与
+            // 対象要素内にフォーカスがある場合に focusActiveClass を附与
             function focusinListener(event) {
                 event.target.closest(focusItemClass).classList.add(focusActiveClass);
             };
 
-            // 対象要素からフォーカスが外れたら class を削除
+            // フォーカス中の要素に focusItemClass が含まれていない場合、すべての対象要素から focusActiveClass を削除
             function focusoutListener(event) {
                 if (!document.activeElement.classList.contains(focusItemClass.slice(1))) {
                     Array.prototype.forEach.call(focusItems, function (e) {
